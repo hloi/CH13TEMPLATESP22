@@ -30,6 +30,8 @@ public:
     // overload a comparison operator for min function in TripleItem class
     bool operator<(const PurchaseItem& other) const;
 
+    bool operator==(const PurchaseItem& other) const;
+
     // overload a insert stream operator for the printAll function.
     friend ostream& operator<<(ostream& out, const PurchaseItem& item);
 
@@ -63,6 +65,10 @@ bool PurchaseItem::operator<(const PurchaseItem &other) const {
 ostream &operator<<(ostream &out, const PurchaseItem &item) {
     out << item.name << " " << item.price << endl;
     return out;
+}
+
+bool PurchaseItem::operator==(const PurchaseItem &other) const {
+    return this->name == other.name and this->price == other.price;
 }
 
 

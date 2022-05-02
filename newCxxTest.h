@@ -15,10 +15,12 @@
 #define NEWCXXTEST_H
 #include "PurchaseItem.h"
 #include "TripleItem.h"
+#include <vector>
 
 #include <cxxtest/TestSuite.h>
 //Include your classes header file(s) below and uncomment.
 //#include "myClass.h"
+using namespace std;
 
 class newCxxTest : public CxxTest::TestSuite {
 public:
@@ -42,8 +44,39 @@ public:
 
 // test string
 
+    void testString() {
+        //Use TS_ASSERT_EQUALS(Result, ExpResult) to test your functions.
+        TripleItem<string> triDouble("hello", "world", "cup"); // TripleItem class with ints
+        string min = triDouble.MinItem();
+        TS_ASSERT_EQUALS("cup", min);
+    }
 
 // test PurchaseItem
+
+    void testPurchaseItem() {
+        PurchaseItem item1("toy1", 10);
+        PurchaseItem item2("toy2", 20);
+        PurchaseItem item3("toy3", 30);
+        TripleItem<PurchaseItem> triItems(item1, item2, item3);
+        PurchaseItem min = triItems.MinItem();
+        TS_ASSERT_EQUALS(item1, min);
+        // TS_ASSERT(min == item1);
+    }
+
+
+    void testPurchaseItemVector() {
+        vector<TripleItem<PurchaseItem>> bags;
+
+        PurchaseItem item1("toy1", 10);
+        PurchaseItem item2("toy2", 20);
+        PurchaseItem item3("toy3", 30);
+        TripleItem<PurchaseItem> triItems(item1, item2, item3);
+        bags.push_back(triItems);
+
+        PurchaseItem min = triItems.MinItem();
+        TS_ASSERT_EQUALS(item1, min);
+        // TS_ASSERT(min == item1);
+    }
 
 };
 #endif /* NEWCXXTEST_H */

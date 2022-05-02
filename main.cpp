@@ -1,6 +1,7 @@
 #include <iostream>
 #include "TripleItem.h"
 #include "PurchaseItem.h"
+#include <vector>
 
 using namespace std;
 
@@ -21,6 +22,14 @@ int main() {
     TripleItem<PurchaseItem> triItems(item1, item2, item3);
     triItems.PrintAll();
     cout << triItems.MinItem() << endl;
+
+    vector<TripleItem<PurchaseItem>> bags;
+
+
+    TripleItem<PurchaseItem> vectorTriItems(item1, item2, item3);
+    bags.push_back(vectorTriItems);
+
+
     return 0;
 }
 
