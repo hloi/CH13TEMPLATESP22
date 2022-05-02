@@ -20,7 +20,7 @@ int main() {
     PurchaseItem item3("toy3", 30);
     TripleItem<PurchaseItem> triItems(item1, item2, item3);
     triItems.PrintAll();
-
+    cout << triItems.MinItem() << endl;
     return 0;
 }
 

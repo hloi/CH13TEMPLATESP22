@@ -6,15 +6,18 @@
 #define CH13TEMPLATESP22_PURCHASEITEM_H
 
 #include <string>
-using std::string;
+#include <sstream>
 
+using std::string;
+using std::ostream;
+using std::endl;
 
 class PurchaseItem {
 private:
     string name;
     double price;
 public:
-
+    PurchaseItem() {}
     PurchaseItem(string name, double price);
     const string &getName() const;
 
@@ -25,9 +28,10 @@ public:
     void setPrice(double price);
 
     // overload a comparison operator for min function in TripleItem class
+    bool operator<(const PurchaseItem& other) const;
 
     // overload a insert stream operator for the printAll function.
-
+    friend ostream& operator<<(ostream& out, const PurchaseItem& item);
 
 };
 
@@ -50,6 +54,15 @@ void PurchaseItem::setPrice(double price) {
 PurchaseItem::PurchaseItem(string name, double price) {
     this->name = name;
     this->price = price;
+}
+
+bool PurchaseItem::operator<(const PurchaseItem &other) const {
+    return this->price < other.price;
+}
+
+ostream &operator<<(ostream &out, const PurchaseItem &item) {
+    out << item.name << " " << item.price << endl;
+    return out;
 }
 
 

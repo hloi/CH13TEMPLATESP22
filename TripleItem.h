@@ -16,7 +16,7 @@ using namespace std;
 template<typename TheType>
 class TripleItem {
 public:
-    TripleItem(TheType val1 = 0, TheType val2 = 0, TheType val3 = 0);
+    TripleItem(TheType val1, TheType val2, TheType val3);
     void PrintAll() const;   // Print all data member values
     TheType MinItem() const; // Return min data member value
 
