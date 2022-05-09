@@ -20,6 +20,8 @@ public:
     void PrintAll() const;   // Print all data member values
     TheType MinItem() const; // Return min data member value
 
+    template<class U>
+    friend ostream& operator<<(ostream& out, const TripleItem<U>& triItem);
 
 private:
     TheType item1;           // Data value 1
@@ -54,6 +56,15 @@ TheType TripleItem<TheType>::MinItem() const {
     }
 
     return minVal;
+}
+
+template<typename U>
+ostream &operator<<(ostream &out, const TripleItem<U>& triItem) {
+    out << triItem.item1 << endl;
+    out << triItem.item2 << endl;
+    out << triItem.item2 << endl;
+    return out;
+
 }
 
 #endif //CH13TEMPLATESP22_TRIPLEITEM_H

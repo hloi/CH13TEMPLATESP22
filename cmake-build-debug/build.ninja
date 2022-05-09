@@ -81,10 +81,10 @@ build unittest.exe: CXX_EXECUTABLE_LINKER__unittest_Debug CMakeFiles/unittest.di
 #############################################
 # Order-only phony target for CH13TEMPLATESP22
 
-build cmake_object_order_depends_target_CH13TEMPLATESP22: phony || runner.cpp
+build cmake_object_order_depends_target_CH13TEMPLATESP22: phony || CMakeFiles/CH13TEMPLATESP22.dir
 
-build CMakeFiles/CH13TEMPLATESP22.dir/runner.cpp.obj: CXX_COMPILER__CH13TEMPLATESP22_Debug C$:/Users/hloi/CLionProjects/CSC109/CH13TEMPLATESP22/cmake-build-debug/runner.cpp || cmake_object_order_depends_target_CH13TEMPLATESP22
-  DEP_FILE = CMakeFiles\CH13TEMPLATESP22.dir\runner.cpp.obj.d
+build CMakeFiles/CH13TEMPLATESP22.dir/main.cpp.obj: CXX_COMPILER__CH13TEMPLATESP22_Debug C$:/Users/hloi/CLionProjects/CSC109/CH13TEMPLATESP22/main.cpp || cmake_object_order_depends_target_CH13TEMPLATESP22
+  DEP_FILE = CMakeFiles\CH13TEMPLATESP22.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++14
   INCLUDES = -Ic:/cxxtest-4.4
   OBJECT_DIR = CMakeFiles\CH13TEMPLATESP22.dir
@@ -98,7 +98,7 @@ build CMakeFiles/CH13TEMPLATESP22.dir/runner.cpp.obj: CXX_COMPILER__CH13TEMPLATE
 #############################################
 # Link the executable CH13TEMPLATESP22.exe
 
-build CH13TEMPLATESP22.exe: CXX_EXECUTABLE_LINKER__CH13TEMPLATESP22_Debug CMakeFiles/CH13TEMPLATESP22.dir/runner.cpp.obj
+build CH13TEMPLATESP22.exe: CXX_EXECUTABLE_LINKER__CH13TEMPLATESP22_Debug CMakeFiles/CH13TEMPLATESP22.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\CH13TEMPLATESP22.dir

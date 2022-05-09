@@ -29,7 +29,7 @@ int main() {
     TripleItem<PurchaseItem> vectorTriItems(item1, item2, item3);
     bags.push_back(vectorTriItems);
 
-
+    cout << triInts;
     return 0;
 }
 

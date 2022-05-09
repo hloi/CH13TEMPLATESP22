@@ -23,4 +23,4 @@ if(CXXTEST_FOUND)
 
 endif()
 
-add_executable(CH13TEMPLATESP22 runner.cpp TripleItem.h PurchaseItem.h)
+add_executable(CH13TEMPLATESP22 main.cpp TripleItem.h PurchaseItem.h)
