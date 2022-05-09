@@ -63,7 +63,7 @@ bool PurchaseItem::operator<(const PurchaseItem &other) const {
 }
 
 ostream &operator<<(ostream &out, const PurchaseItem &item) {
-    out << item.name << " " << item.price << endl;
+    out << item.name << " " << item.price;
     return out;
 }
 

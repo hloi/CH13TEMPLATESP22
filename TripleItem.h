@@ -20,6 +20,7 @@ public:
     void PrintAll() const;   // Print all data member values
     TheType MinItem() const; // Return min data member value
 
+    // must overload as a template function
     template<class U>
     friend ostream& operator<<(ostream& out, const TripleItem<U>& triItem);
 
@@ -58,11 +59,12 @@ TheType TripleItem<TheType>::MinItem() const {
     return minVal;
 }
 
+// overload template function
 template<typename U>
 ostream &operator<<(ostream &out, const TripleItem<U>& triItem) {
     out << triItem.item1 << endl;
     out << triItem.item2 << endl;
-    out << triItem.item2 << endl;
+    out << triItem.item3 << endl;
     return out;
 
 }

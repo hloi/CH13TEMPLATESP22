@@ -10,18 +10,18 @@ int main() {
     TripleItem<short> triShorts(99, 55, 66);   // TripleItem class with shorts
 
     // Try functions from TripleItem
-    triInts.PrintAll();
+    cout << triInts;  // overload operator<<
     cout << "Min: " << triInts.MinItem() << endl << endl;
 
-    triShorts.PrintAll();
+    cout << triShorts;
     cout << "Min: " << triShorts.MinItem() << endl << endl;
 
     PurchaseItem item1("toy1", 10);
     PurchaseItem item2("toy2", 20);
     PurchaseItem item3("toy3", 30);
     TripleItem<PurchaseItem> triItems(item1, item2, item3);
-    triItems.PrintAll();
-    cout << triItems.MinItem() << endl;
+    cout << triItems;  // overload operator<<
+    cout << "Min: " << triItems.MinItem() << endl;
 
     vector<TripleItem<PurchaseItem>> bags;
 
@@ -29,7 +29,7 @@ int main() {
     TripleItem<PurchaseItem> vectorTriItems(item1, item2, item3);
     bags.push_back(vectorTriItems);
 
-    cout << triInts;
+
     return 0;
 }
 
